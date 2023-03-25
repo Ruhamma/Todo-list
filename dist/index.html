@@ -17,7 +17,7 @@
       <div class="form">
         <button class="addTodoBtn">Add Todo</button>
         <div id="todoForm">
-          <form id="addTodo">
+          <form id="addTodo" style="display: none">
             <label for="Project">Project</label>
             <select name="Project" id="Project">
               <option value="DefaultProject">Default</option>
@@ -38,7 +38,12 @@
             <label for="checkList">Check List</label>
             <ul class="todoUl"></ul>
           </form>
-          <input type="text" name="addCheck" id="addCheck" placeholder="Type items"/>
+          <input
+            type="text"
+            name="addCheck"
+            id="addCheck"
+            placeholder="Type items"
+          />
           <button class="addToCheck">Add to check list</button>
           <button type="submit" class="submit">Create</button>
           <button type="reset" class="reset">Reset</button>
