@@ -1,5 +1,6 @@
 import { compareAsc, startOfToday, parseISO } from "date-fns";
 import { clearForm } from "./Dom";
+import { saveTodo } from "./storage";
 function id(name) {
   return document.getElementById(`${name}`);
 }
@@ -18,7 +19,7 @@ export const createTodo = () => {
   if (parseISO(date) < startOfToday()) {
     alert("day has already passed");
     //add message under input in styling phase
-    
+
     return;
   }
 
@@ -31,8 +32,8 @@ export const createTodo = () => {
   }
 
   let checklistData = checklistArray.join(", ");
-  todoArray.push({ title, desc, date, priority,checklistData });
-
- // clearForm();
+  todoArray.push({ title, desc, date, priority, checklistData });
+  saveTodo({ title, desc, date, priority, checklistData });
+  // clearForm();
   return { title, desc, priority, date, checklistData };
 };

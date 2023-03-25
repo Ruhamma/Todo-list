@@ -1,4 +1,5 @@
 import { blankProject, Project } from "./initProjectLoad";
+import { fetchFromStorage } from "./storage";
 function element(type) {
   return document.createElement(`${type}`);
 }
@@ -52,3 +53,28 @@ export function clearForm() {
   document.getElementById("addTodo").reset();
 }
 
+export function displayTodo() {
+  const removeDivs = document.querySelectorAll(".card");
+  for (let i = 0; i < removeDivs.length; i++) {
+    removeDivs[i].remove();
+  }
+  const projects = document.querySelector(".projects");
+  const card = element("div");
+  card.classList.add("card");
+  projects.appendChild(card);
+
+  let Title = fetchFromStorage("Title");
+  let Description = fetchFromStorage("Description");
+  let Date = fetchFromStorage("Date");
+  let Priority = fetchFromStorage("Priority");
+  let checklist = fetchFromStorage("Checklist");
+
+  let displayArray = { Title, Description, Date, Priority, checklist };
+
+  for (const key in displayArray) {
+    console.log(`${key} : ${displayArray[key]}`);
+    const para = element("p");
+    para.textContent = `${key} : ${displayArray[key]}`;
+    card.appendChild(para);
+  }
+}
