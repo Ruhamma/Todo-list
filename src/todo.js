@@ -10,7 +10,6 @@ export const createTodo = () => {
   let desc = id("desc").value;
   let date = id("date").value;
   let priority = id("priority").value;
-  console.log(title, desc, priority, date);
   if (title == "" || desc == "" || date == "") {
     alert("Field can't be empty");
     //add message under input in styling phase
@@ -19,7 +18,7 @@ export const createTodo = () => {
   if (parseISO(date) < startOfToday()) {
     alert("day has already passed");
     //add message under input in styling phase
-    console.log(parseISO(date), startOfToday());
+    
     return;
   }
 
@@ -32,8 +31,8 @@ export const createTodo = () => {
   }
 
   let checklistData = checklistArray.join(", ");
-  todoArray.push({ title, desc, date, priority });
+  todoArray.push({ title, desc, date, priority,checklistData });
 
-  clearForm();
-  return { title, desc, priority, date, priority, checklistData };
+ // clearForm();
+  return { title, desc, priority, date, checklistData };
 };

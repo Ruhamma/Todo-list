@@ -1,6 +1,6 @@
 import { blankProject } from "./initProjectLoad";
 import { initDom, displayForm, addItemToCheck, clearForm } from "./Dom";
-import { todo } from "./todo";
+import { createTodo } from "./todo";
 blankProject();
 
 initDom();
