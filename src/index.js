@@ -1,5 +1,5 @@
 import { blankProject } from "./initProjectLoad";
-import { initDom } from "./Dom";
+import { initDom, displayForm, addItemToCheck, clearForm } from "./Dom";
 import { todo } from "./todo";
 blankProject();
 
@@ -11,8 +11,11 @@ const eventModule = (() => {
   newTodo.addEventListener("click", displayForm);
   //add item to checklist
   const addCheck = document.querySelector(".addToCheck");
-  addCheck.addEventListener("click", displayForm);
+  addCheck.addEventListener("click", addItemToCheck);
   //reset form
   const reset = document.querySelector(".reset");
   reset.addEventListener("click", clearForm);
+  //submit todo
+  const submit = document.querySelector(".submit");
+  submit.addEventListener("click", createTodo);
 })();
