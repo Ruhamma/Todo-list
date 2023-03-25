@@ -1,1 +1,1 @@
-console.log("check");
+(()=>{"use strict";class t{constructor(t){this.name=t,this.todoArray=[]}getName(){return this.name}getTodo(){return this.todoArray}}const e=()=>{let e=[],n=new t("List");return e.push(n),console.log(e),{projectsArray:e,pe:n}};function n(t){return document.createElement(`${t}`)}e(),function(){const t=document.querySelector(".content"),o=n("h1");o.textContent="See ya",t.appendChild(o);const r=n("div");r.textContent=e().pe.name,t.appendChild(r)}()})();
