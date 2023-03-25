@@ -1,5 +1,5 @@
 import { blankProject } from "./initProjectLoad";
-import { initDom } from "./initDom";
+import { initDom } from "./Dom";
 import { todo } from "./todo";
 blankProject();
 
