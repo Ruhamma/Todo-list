@@ -2,17 +2,27 @@ export default class Project {
   constructor(name) {
     (this.name = name), (this.todoArray = []);
   }
-  getName(){
+  setName(name) {
+    this.name = name;
+  }
+  getName() {
     return this.name;
   }
-  getTodo(){
+  getTodoArray() {
     return this.todoArray;
   }
+  addTodo(todo) {
+    this.todoArray.push(todo);
+  }
+  removeTodo(todoTitle) {
+    const found = this.todoArray.find((todo) => todo.getTitle() === todoTitle);
+    this.todoArray.splice(found, 1);
+  }
+  getTodo(todoName) {
+    return this.todoArray.find((todo) => {
+      todo.getTitle() == todoName;
+    });
+
+  }
 }
-export const blankProject = () => {
-  let projectsArray = [];
-  let pe = new Project("List");
-  projectsArray.push(pe);
-  console.log(projectsArray);
-  return { projectsArray,pe };
-};
+
