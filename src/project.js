@@ -8,6 +8,9 @@ export default class Project {
   getName() {
     return this.name;
   }
+  setTodoArray(todoArray) {
+    this.todoArray = todoArray;
+  }
   getTodoArray() {
     return this.todoArray;
   }
@@ -22,7 +25,5 @@ export default class Project {
     return this.todoArray.find((todo) => {
       todo.getTitle() == todoName;
     });
-
   }
 }
-

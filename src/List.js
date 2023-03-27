@@ -2,6 +2,9 @@ export default class List {
   constructor() {
     this.projectArray = [];
   }
+  setList(projectArray){
+    this.projectArray=projectArray;
+  }
   getList() {
     return this.projectArray;
   }
